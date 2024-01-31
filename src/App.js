@@ -1,10 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Nav from "./components/nav";
+import Home from "./components/home";
+import Add from "./components/add";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <Nav/> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/Home" element={<Home/>} />
+          <Route path="/Add" element={<Add/>} />
+        </Routes>
+      </BrowserRouter>
+      {/*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,8 +30,10 @@ function App() {
         >
           Learn React.
         </a>
-      </header>
-    </div>
+      </header>*/}
+
+
+  </div> 
   );
 }
 
